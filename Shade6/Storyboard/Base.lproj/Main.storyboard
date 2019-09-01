@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WNR-lT-aSn">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Plants-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlantListViewController" customModule="Shade6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eor-KD-C28">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ima-ad-0cp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mCQ-cZ-wy9"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RjL-nt-9Qq">
+                                <rect key="frame" x="141.5" y="297.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.75686274509999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eor-KD-C28" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="72r-L5-mhU"/>
+                            <constraint firstItem="RjL-nt-9Qq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="9YJ-Ip-i0l"/>
+                            <constraint firstItem="RjL-nt-9Qq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FFD-53-NSh"/>
+                            <constraint firstItem="eor-KD-C28" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TmA-qR-7m3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eor-KD-C28" secondAttribute="trailing" id="Zor-Sc-DYR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eor-KD-C28" secondAttribute="bottom" id="fuI-PZ-bb0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Plants" id="x0c-gg-k8W"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="RjL-nt-9Qq" id="ULb-LB-R7A"/>
+                        <outlet property="plantTable" destination="eor-KD-C28" id="Qbq-TM-9RW"/>
+                        <segue destination="4ox-oJ-fWI" kind="show" identifier="goToDetail" id="v3F-CK-IY7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="413"/>
+        </scene>
+        <!--Plant Detail View Controller-->
+        <scene sceneID="saK-sC-pb6">
+            <objects>
+                <viewController id="4ox-oJ-fWI" customClass="PlantDetailViewController" customModule="Shade6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q88-mW-bxJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7ZH-ex-cfI">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4ox-oJ-fWI" id="DkK-h5-cds"/>
+                                    <outlet property="delegate" destination="4ox-oJ-fWI" id="fhT-j2-2uz"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pSm-8q-bYk">
+                                <rect key="frame" x="141.5" y="297.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.75686274509999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.75686274509999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ey7-Ff-Avx" firstAttribute="trailing" secondItem="7ZH-ex-cfI" secondAttribute="trailing" id="MYZ-G2-Py7"/>
+                            <constraint firstItem="pSm-8q-bYk" firstAttribute="centerX" secondItem="ey7-Ff-Avx" secondAttribute="centerX" id="Rrn-YA-wzd"/>
+                            <constraint firstItem="pSm-8q-bYk" firstAttribute="centerY" secondItem="ey7-Ff-Avx" secondAttribute="centerY" id="VaK-Tf-BeM"/>
+                            <constraint firstItem="ey7-Ff-Avx" firstAttribute="bottom" secondItem="7ZH-ex-cfI" secondAttribute="bottom" id="aSt-QT-PRl"/>
+                            <constraint firstItem="7ZH-ex-cfI" firstAttribute="leading" secondItem="ey7-Ff-Avx" secondAttribute="leading" id="cjN-Di-TqD"/>
+                            <constraint firstItem="7ZH-ex-cfI" firstAttribute="top" secondItem="ey7-Ff-Avx" secondAttribute="top" id="dBu-8u-dBL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ey7-Ff-Avx"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="pSm-8q-bYk" id="geA-hY-6S1"/>
+                        <outlet property="detailTableView" destination="7ZH-ex-cfI" id="pdI-0j-5Gg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRd-0s-ihK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1304" y="414"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TWd-aO-bTT">
+            <objects>
+                <navigationController id="WNR-lT-aSn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ap3-bU-PgG">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.75686274509803919" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9ni-vM-Ri5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cq-Za-v3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-486" y="420"/>
+        </scene>
+    </scenes>
+</document>
